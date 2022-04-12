@@ -1,10 +1,10 @@
 // @ts-nocheck
 import db from '$lib/db';
 import bcrypt from 'bcryptjs';
-import { parse } from 'cookie';
+// import { parse } from 'cookie';
 export async function post({ request }) {
-	let weas = parse(request.headers.get('cookie'));
-
+	
+	// let weas = parse(request.headers.get('cookie'));
 	let { email, password } = await request.json();
 
 	let user = await db.query('SELECT id, password, email FROM users WHERE email = $1', [email]);
